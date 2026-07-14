@@ -1,0 +1,15 @@
+# Rust build artifacts (nặng, không commit)
+/backend/target/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# File sinh tự động bởi script sitemap
+sitemap.xml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,36 @@
+[package]
+name = "rustconvert"
+version = "0.1.0"
+edition = "2021"
+description = "Backend API cho website Convert Đa Năng Online (Axum)"
+
+[dependencies]
+# Web framework + multipart để nhận file upload
+axum = { version = "0.7", features = ["multipart"] }
+tokio = { version = "1", features = ["full"] }
+
+# CORS nghiêm ngặt
+tower-http = { version = "0.6", features = ["cors"] }
+
+# Bảo mật: đổi tên file thành UUID ngẫu nhiên
+uuid = { version = "1", features = ["v4"] }
+
+# Thư mục tạm tự hủy (đảm bảo xóa sạch file sau mỗi request)
+tempfile = "3"
+
+# Nhóm 4: xử lý ảnh -> bộ App Icon.
+# Chỉ bật codec PNG + JPEG (đọc png/jpg, xuất png) -> bỏ AVIF/EXR... cho build
+# nhanh và binary gọn hơn nhiều.
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+
+# Nén kết quả (PDF->ảnh, App Icon) thành .zip
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+# Log
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true

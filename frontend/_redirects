@@ -1,0 +1,4 @@
+# Cloudflare Pages / Netlify: rewrite mọi đường dẫn động (/wav-to-mp3, /docx-to-pdf...)
+# về index.html với status 200 (giữ nguyên URL trên thanh địa chỉ để JS đọc path).
+# Sitemap và các asset tĩnh vẫn được phục vụ bình thường vì đã tồn tại thật.
+/*    /index.html   200
