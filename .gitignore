@@ -1,6 +1,9 @@
 # Rust build artifacts (nặng, không commit)
 /backend/target/
 
+# Site tĩnh sinh tự động bởi scripts/build_site.py (build lại khi deploy)
+/dist/
+
 # Python
 __pycache__/
 *.py[cod]
